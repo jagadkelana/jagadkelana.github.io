@@ -10,16 +10,194 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet">
+
   <style>
-      .plus-jakarta-sans{
-          font-family: "Plus Jakarta Sans", sans-serif;
-          font-optical-sizing: auto;
-          font-weight: 500;
+      .philosopher-regular {
+          font-family: "Philosopher", sans-serif;
+          font-weight: 400;
           font-style: normal;
       }
 
+      .philosopher-bold {
+          font-family: "Philosopher", sans-serif;
+          font-weight: 700;
+          font-style: normal;
+      }
+
+      .philosopher-regular-italic {
+          font-family: "Philosopher", sans-serif;
+          font-weight: 400;
+          font-style: italic;
+      }
+
+      .philosopher-bold-italic {
+          font-family: "Philosopher", sans-serif;
+          font-weight: 700;
+          font-style: italic;
+      }
+
+      body {
+          background: -moz-linear-gradient(45deg, #02e1ba 0%, #26c9f2 29%, #d911f2 66%, #ffa079 100%);
+          background: -webkit-linear-gradient(45deg, #02e1ba 0%, #26c9f2 29%, #d911f2 66%, #ffa079 100%);
+          background: linear-gradient(45deg, #02e1ba 0%, #26c9f2 29%, #d911f2 66%, #ffa079 100%);
+          background-size: 400% 400%;
+          -webkit-animation: Gradient 15s ease infinite;
+          -moz-animation: Gradient 15s ease infinite;
+          animation: Gradient 15s ease infinite;
+          /*min-height: calc(100vh - 2rem);*/
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+          justify-content: space-evenly;
+          position: relative;
+      }
+
+      body::before,
+      body::after {
+          content: "";
+          width: 70vmax;
+          height: 70vmax;
+          position: absolute;
+          background: rgba(255, 255, 255, 0.07);
+          left: -20vmin;
+          top: -20vmin;
+          animation: morph 15s linear infinite alternate, spin 20s linear infinite;
+          z-index: 1;
+          will-change: border-radius, transform;
+          transform-origin: 55% 55%;
+          pointer-events: none;
+      }
+
+      body::after {
+          width: 70vmin;
+          height: 70vmin;
+          left: auto;
+          right: -10vmin;
+          top: auto;
+          bottom: 0;
+          animation: morph 10s linear infinite alternate, spin 26s linear infinite reverse;
+          transform-origin: 20% 20%;
+      }
+
+      @-webkit-keyframes Gradient {
+          0% {
+              background-position: 0 50%
+          }
+          50% {
+              background-position: 100% 50%
+          }
+          100% {
+              background-position: 0 50%
+          }
+      }
+
+      @-moz-keyframes Gradient {
+          0% {
+              background-position: 0 50%
+          }
+          50% {
+              background-position: 100% 50%
+          }
+          100% {
+              background-position: 0 50%
+          }
+      }
+
+      @keyframes Gradient {
+          0% {
+              background-position: 0 50%
+          }
+          50% {
+              background-position: 100% 50%
+          }
+          100% {
+              background-position: 0 50%
+          }
+      }
+
+      @keyframes morph {
+          0% {
+              border-radius: 40% 60% 60% 40% / 70% 30% 70% 30%;
+          }
+          100% {
+              border-radius: 40% 60%;
+          }
+      }
+
+      @keyframes spin {
+          to {
+              transform: rotate(1turn);
+          }
+      }
+
+      .st0 {
+          display: none;
+      }
+
+      .st1 {
+          display: inline;
+      }
+
+      .st2 {
+          opacity: 0.29;
+      }
+
+      .st3 {
+          fill: #FFFFFF;
+      }
+
+      .st4 {
+          clip-path: url(#SVGID_2_);
+          fill: #FFFFFF;
+      }
+
+      .st5 {
+          clip-path: url(#SVGID_4_);
+      }
+
+      .st6 {
+          clip-path: url(#SVGID_6_);
+      }
+
+      .st7 {
+          clip-path: url(#SVGID_8_);
+      }
+
+      .st8 {
+          clip-path: url(#SVGID_10_);
+      }
+
+      .st9 {
+          fill: none;
+      }
+
+      .st10 {
+          clip-path: url(#SVGID_12_);
+      }
+
+      .st11 {
+          opacity: 0.7;
+      }
+
+      .st12 {
+          clip-path: url(#SVGID_14_);
+      }
+
+      .st13 {
+          opacity: 0.2;
+      }
+
+      .st14 {
+          clip-path: url(#SVGID_16_);
+      }
+
+      .st15 {
+          opacity: 0.3;
+          fill: #FFFFFF;
+          enable-background: new;
+      }
   </style>
 </head>
 <body>
@@ -30,17 +208,22 @@ for: https://web3templates.com
 -->
 
   <div class="relative overflow-hidden">
-    <div class="bg-white pt-10 pb-14 sm:pt-16 lg:overflow-hidden lg:pt-24 lg:pb-24">
+    <div class="pt-10 pb-14 sm:pt-16 lg:overflow-hidden lg:pt-24 lg:pb-24">
       <div class="mx-auto max-w-5xl lg:px-8">
         <div class="lg:grid lg:grid-cols-2 lg:gap-8">
           <div
               class="mx-auto max-w-md px-4 text-center sm:max-w-2xl sm:px-6 lg:flex lg:items-center lg:px-0 lg:text-left">
             <div class="lg:py-24 text-center">
-              <img src="logo.png" alt="" class="w-72 mb-8 m-auto">
-              <p class="mt-3 text-lg md:text-2xl plus-jakarta-sans">
+              <p class="text-5xl mb-8 font-black text-white philosopher-regular">Hi, Traveler!</p>
+              <p class="mt-3 text-lg md:text-2xl plus-jakarta-sans text-blue-50 philosopher-regular">
                 Embark on an immersive journey through the captivating universe of Jagad, where thematic tourism meets
-                thrilling adventure, inviting all Pengelana to unlock mysteries, uncover past events, and collect
-                achievements through engaging gamification
+                thrilling adventure.
+                <br>
+                <br>JagadKelana inviting all Pengelana to
+                unlock mysteries,
+                uncover past events, and
+                collect achievements
+                through  engaging gamification.
               </p>
               <div class="uppercase font-black text-lg rounded-full bg-black text-white px-8 py-4 mt-16">Coming Soon
               </div>
@@ -54,9 +237,9 @@ for: https://web3templates.com
       </div>
     </div>
   </div>
-  <footer class="bg-white">
+  <footer class="">
     <div class="mx-auto max-w-7xl overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
-      <p class="mt-8 text-center text-base text-gray-400">© 2024 JagadKelana. All rights reserved.</p>
+      <p class="mt-8 text-center text-base text-white philosopher-regular-italic">© 2024 Jagad Kelana. All rights reserved.</p>
     </div>
   </footer>
 </body>
